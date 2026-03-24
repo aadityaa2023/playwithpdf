@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import FooterWrapper from "@/components/FooterWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,8 +13,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://docuflow.app"),
   title: {
-    default: "DocuFlow – Free Online PDF & Document Editor",
-    template: "%s | DocuFlow",
+    default: "PlayWithPDF – Free Online PDF Editor",
+    template: "%s | PlayWithPDF",
   },
   description:
     "Free online tools to edit, merge, split, compress, convert and manage PDF & Word documents. No signup required. Fast, secure, and easy to use.",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     "online pdf editor",
     "pdf converter",
   ],
-  authors: [{ name: "DocuFlow" }],
-  creator: "DocuFlow",
+  authors: [{ name: "PlayWithPDF" }],
+  creator: "PlayWithPDF",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://docuflow.app",
-    siteName: "DocuFlow",
-    title: "DocuFlow – Free Online PDF & Document Editor",
+    siteName: "PlayWithPDF",
+    title: "PlayWithPDF – Free Online PDF & Document Editor",
     description:
       "Free online tools to edit, merge, split, compress, and convert PDF documents. No signup required.",
     images: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "DocuFlow - Free PDF Tools",
+        alt: "PlayWithPDF - Free PDF Tools",
       },
     ],
   },
@@ -67,17 +67,21 @@ export const metadata: Metadata = {
   },
 };
 
+import { TooltipProvider } from "@/components/ui/tooltip";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} scroll-smooth dark`}>
       <body className="min-h-screen flex flex-col bg-background antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <TooltipProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <FooterWrapper />
+        </TooltipProvider>
       </body>
     </html>
   );

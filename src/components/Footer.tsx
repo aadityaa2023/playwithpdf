@@ -2,28 +2,10 @@ import Link from "next/link";
 import { FileOutput, Twitter, Github, Linkedin, Heart } from "lucide-react";
 
 const footerLinks = {
-  "PDF Tools": [
-    { label: "PDF Editor", href: "/pdf-editor" },
-    { label: "Merge PDF", href: "/merge-pdf" },
-    { label: "Split PDF", href: "/split-pdf" },
-    { label: "Compress PDF", href: "/compress-pdf" },
-    { label: "Rotate PDF", href: "/rotate-pdf" },
-  ],
-  "Convert": [
-    { label: "PDF to JPG", href: "/pdf-to-jpg" },
-    { label: "PDF to Text", href: "/pdf-to-text" },
-    { label: "JPG to PDF", href: "/jpg-to-pdf" },
-    { label: "Word to PDF", href: "/word-to-pdf" },
-  ],
-  "Edit & Security": [
-    { label: "Delete Pages", href: "/delete-pages" },
-    { label: "Watermark PDF", href: "/watermark-pdf" },
-    { label: "Protect PDF", href: "/protect-pdf" },
-    { label: "Unlock PDF", href: "/unlock-pdf" },
-    { label: "Extract Pages", href: "/extract-pages" },
+  "PDF Editor": [
+    { label: "Full Editor", href: "/pdf-editor" },
   ],
   "Company": [
-    { label: "All Tools", href: "/tools" },
     { label: "About", href: "/about" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
@@ -43,7 +25,7 @@ export default function Footer() {
                 <FileOutput className="w-4 h-4 text-primary-foreground" />
               </div>
               <span className="text-lg font-bold">
-                Docu<span className="text-primary">Flow</span>
+                PlayWith<span className="text-blue-500">PDF</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-4">
@@ -97,7 +79,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-border py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} DocuFlow. All rights reserved.
+            © {new Date().getFullYear()} PlayWithPDF. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1.5">
             Made with <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> for document lovers worldwide
