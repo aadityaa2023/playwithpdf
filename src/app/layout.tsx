@@ -13,8 +13,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://docuflow.app"),
   title: {
-    default: "PlayWithPDF – Free Online PDF Editor",
-    template: "%s | PlayWithPDF",
+    default: "Sejda premium – Free Online PDF Editor",
+    template: "%s | Sejda premium",
   },
   description:
     "Free online tools to edit, merge, split, compress, convert and manage PDF & Word documents. No signup required. Fast, secure, and easy to use.",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     "online pdf editor",
     "pdf converter",
   ],
-  authors: [{ name: "PlayWithPDF" }],
-  creator: "PlayWithPDF",
+  authors: [{ name: "Sejda premium" }],
+  creator: "Sejda premium",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://docuflow.app",
-    siteName: "PlayWithPDF",
-    title: "PlayWithPDF – Free Online PDF & Document Editor",
+    siteName: "Sejda premium",
+    title: "Sejda premium – Free Online PDF & Document Editor",
     description:
       "Free online tools to edit, merge, split, compress, and convert PDF documents. No signup required.",
     images: [
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "PlayWithPDF - Free PDF Tools",
+        alt: "Sejda premium - Free PDF Tools",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DocuFlow – Free Online PDF & Document Editor",
+    title: "Sejda premium – Free Online PDF & Document Editor",
     description: "Free online PDF and document tools. Merge, split, compress, convert and more.",
     images: ["/og-image.png"],
   },
@@ -75,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth dark`}>
+    <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col bg-background antialiased">
         <TooltipProvider>
           <Navbar />

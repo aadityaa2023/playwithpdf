@@ -1,15 +1,15 @@
 export default function AboutPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 prose dark:prose-invert prose-blue">
-      <h1>About DocuFlow</h1>
+      <h1>About Sejda premium</h1>
       <p className="lead">
-        DocuFlow was built with a simple mission: to make document editing free, fast, and completely private.
+        Sejda premium was built with a simple mission: to make document editing free, fast, and completely private.
       </p>
       
       <h2>100% Client-Side Processing</h2>
       <p>
         Most online PDF tools upload your sensitive documents to their servers. We don't. 
-        DocuFlow leverages modern web technologies (WebAssembly and advanced JavaScript) to 
+        Sejda premium leverages modern web technologies (WebAssembly and advanced JavaScript) to 
         process your files entirely within your web browser. 
       </p>
       <ul>
@@ -28,7 +28,7 @@ export default function AboutPage() {
       <h2>Open & Accessible</h2>
       <p>
         Whether you need to quickly merge some invoices, shrink a presentation for email, 
-        or extract pages from a massive report, DocuFlow is always here, ready to work 
+        or extract pages from a massive report, Sejda premium is always here, ready to work 
         instantly without requiring an account.
       </p>
     </div>

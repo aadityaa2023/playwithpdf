@@ -16,16 +16,16 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 w-full border-b border-[#E5E5E5] bg-white/90 backdrop-blur-md text-[#333333]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+            <div className="w-9 h-9 rounded-xl bg-[#2BB3A3] flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
               <FileOutput className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold tracking-tight">
-              PlayWith<span className="text-blue-500">PDF</span>
+            <span className="text-xl font-bold tracking-tight text-[#333333]">
+              Sejda <span className="text-[#2BB3A3]">premium</span>
             </span>
           </Link>
 

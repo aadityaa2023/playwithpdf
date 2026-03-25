@@ -24,8 +24,8 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-xl bg-primary flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                 <FileOutput className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold">
-                PlayWith<span className="text-blue-500">PDF</span>
+              <span className="text-lg font-bold text-[#333333]">
+                Sejda <span className="text-[#2BB3A3]">premium</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-4">
@@ -79,7 +79,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-border py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} PlayWithPDF. All rights reserved.
+            © {new Date().getFullYear()} Sejda premium. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1.5">
             Made with <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> for document lovers worldwide

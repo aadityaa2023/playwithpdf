@@ -30,8 +30,8 @@ function formatBytes(bytes: number) {
 }
 
 function getFileIcon(file: File) {
-  if (file.type === "application/pdf") return <FileText className="w-5 h-5 text-red-500" />;
-  if (file.type.startsWith("image/")) return <Image className="w-5 h-5 text-blue-500" />;
+  if (file.type === "application/pdf") return <FileText className="w-5 h-5 text-[#EF4444]" />;
+  if (file.type.startsWith("image/")) return <Image className="w-5 h-5 text-[#2BB3A3]" />;
   return <File className="w-5 h-5 text-muted-foreground" />;
 }
 

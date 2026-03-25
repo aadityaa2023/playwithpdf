@@ -1,23 +1,16 @@
-"use client";
+import React from "react";
+import { Loader2 } from "lucide-react";
 
-import { useRef } from "react";
-import { useRouter } from "next/navigation";
+interface DropzoneProps {
+  loading: boolean;
+  onDrop: (e: React.DragEvent) => void;
+  onUploadClick: () => void;
+}
 
-export default function HomePage() {
-  const router = useRouter();
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file && file.type === "application/pdf") {
-      router.push("/pdf-editor");
-    }
-  };
-
+export function Dropzone({ loading, onDrop, onUploadClick }: DropzoneProps) {
   return (
-    <div className="flex flex-col min-h-[calc(100vh-64px)] bg-[#f4f5f7] text-[#333] font-sans">
-      <section className="flex-1 flex flex-col items-center pt-16 pb-20 px-4">
-        {/* Headings */}
+    <div className="flex-1 overflow-y-auto bg-[#f4f5f7]">
+      <section className="flex flex-col items-center pt-16 pb-20 px-4">
         <div className="text-center mb-8">
           <h1 className="text-[2.5rem] font-bold text-[#333] mb-4">
             Easy to use Online PDF editor
@@ -27,30 +20,32 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Upload Box */}
-        <div className="w-full max-w-[800px] bg-white rounded-md shadow-[0_2px_4px_rgba(0,0,0,0.1)] p-12 text-center border border-[#e5e5e5]">
-          <input 
-            ref={fileInputRef}
-            type="file" 
-            accept="application/pdf" 
-            className="hidden" 
-            onChange={handleFileChange} 
-          />
-          
-          <div className="flex flex-col items-center justify-center space-y-4">
-            <button 
-              className="bg-[#5cb85c] hover:bg-[#449d44] text-white text-xl font-bold py-4 px-8 rounded-sm shadow-sm transition-colors flex items-center gap-2"
-              onClick={() => fileInputRef.current?.click()}
-            >
-              Upload PDF file
-            </button>
-            <p className="text-[#999] text-base mt-2">
-              or drop PDFs here
-            </p>
-          </div>
+        <div 
+          className="w-full max-w-[800px] bg-white rounded-md shadow-[0_2px_4px_rgba(0,0,0,0.1)] p-12 text-center border border-[#e5e5e5] cursor-pointer hover:shadow-md transition-shadow"
+          onDrop={onDrop}
+          onDragOver={e => e.preventDefault()}
+          onClick={() => !loading && onUploadClick()}
+        >
+          {loading ? (
+            <div className="flex flex-col items-center gap-4 py-8">
+              <Loader2 className="w-12 h-12 text-[#5cb85c] animate-spin" />
+              <p className="text-[#666] text-lg font-medium">Processing your document...</p>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center space-y-4 py-4">
+              <button 
+                className="bg-[#5cb85c] hover:bg-[#449d44] text-white text-xl font-bold py-4 px-8 rounded-sm shadow-sm transition-colors flex items-center gap-2"
+                onClick={(e) => { e.stopPropagation(); onUploadClick(); }}
+              >
+                Upload PDF file
+              </button>
+              <p className="text-[#999] text-base mt-2">
+                or drop PDFs here
+              </p>
+            </div>
+          )}
         </div>
 
-        {/* Info Text below upload */}
         <div className="mt-8 text-center text-[#666] text-[13px] leading-relaxed max-w-2xl">
           <p className="mb-1">
             <span className="font-semibold text-[#555]">Files stay private.</span> Automatically deleted after 2 hours.
@@ -61,7 +56,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust / Additional Info Section - similar to Sejda's standard page bottoms */}
       <section className="bg-white border-t border-[#e5e5e5] py-16">
         <div className="max-w-4xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
